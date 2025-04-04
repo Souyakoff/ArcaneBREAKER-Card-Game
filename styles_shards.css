@@ -1,0 +1,66 @@
+.packs-container {
+    display: flex;
+    justify-content: space-between; /* Espacement égal entre les blocs */
+    align-items: center;
+    flex-wrap: wrap; /* Les blocs passent à la ligne si nécessaire */
+    gap: 20px; /* Espacement entre les blocs */
+    margin-top: 20px;
+    width: 100%; /* Occupe toute la largeur */
+    max-width: 1200px; /* Largeur maximale */
+    margin: 0 auto; /* Centrer le conteneur dans la page */
+}
+
+.shard-pack {
+    background-image: url(images/shardsbg.webp);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px; /* Largeur du bloc */
+    height: auto; /* Hauteur automatique selon le contenu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Disposer les éléments en colonne */
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shard-pack img {
+    width: 100%; /* L'image occupe toute la largeur */
+    height: 150px; /* Hauteur fixe pour l'image */
+    object-fit: cover; /* Adapte l'image sans déformation */
+    border-radius: 8px; /* Coins arrondis */
+}
+
+.shard-pack:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.shard-pack h3 {
+    margin: 10px 0;
+    color: #16213e;
+    font-size: 1.2rem;
+}
+
+.shard-pack p {
+    font-size: 1rem;
+    color: #e94560;
+    margin: 10px 0;
+}
+
+.shard-pack button {
+    background-color: #16213e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.shard-pack button:hover {
+    background-color: #e94560;
+}

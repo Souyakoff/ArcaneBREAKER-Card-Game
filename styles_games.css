@@ -1,0 +1,174 @@
+#game-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#player-health, #bot-health {
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+#game-board {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#player-board, #bot-board {
+    width: 45%;
+    height: 300px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+}
+
+#deck {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacement entre les cartes */
+    padding: 20px;
+}
+
+/* Style de base pour chaque carte */
+.card {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Perspective pour l'effet de retournement */
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Effet de retournement au survol */
+}
+
+/* Face avant de la carte */
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* S'assure que l'image couvre toute la carte */
+    backface-visibility: hidden; /* Cache l'arrière lors du retournement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* Nom de la carte sur la face avant */
+.card p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    z-index: 3; /* Au-dessus de l'image */
+    backface-visibility: hidden; /* Cache l'arrière lors du retournement */
+}
+
+/* Face arrière de la carte */
+.card[data-id]::after {
+    content: attr(data-attack) " ATK | " attr(data-defense) " DEF"; /* Statistiques dynamiques */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(27, 38, 44, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.card[data-id] {
+    background-color: #1b262c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e7a86d;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    transform: rotateY(180deg); /* La face arrière est par défaut inversée */
+}
+
+
+@keyframes damage {
+    0% {
+        transform: scale(1);
+        color: red;
+    }
+    50% {
+        transform: scale(1.2);
+        color: darkred;
+    }
+    100% {
+        transform: scale(1);
+        color: red;
+    }
+}
+
+.damage-effect {
+    animation: damage 0.5s ease-out;
+}
+
+@keyframes heal {
+    0% {
+        transform: scale(1);
+        color: green;
+    }
+    50% {
+        transform: scale(1.2);
+        color: limegreen;
+    }
+    100% {
+        transform: scale(1);
+        color: green;
+    }
+}
+
+.heal-effect {
+    animation: heal 0.5s ease-out;
+}
+#inventory {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#items-list {
+    display: flex;
+    gap: 10px;
+}
+
+.item {
+    border: 1px solid #999;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.item img {
+    max-width: 50px;
+    margin-bottom: 5px;
+}

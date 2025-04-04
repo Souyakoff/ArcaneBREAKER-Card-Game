@@ -1,0 +1,150 @@
+/* Profil */
+.profile-info {
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 40px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.profile-info img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #e94560;
+    transition: transform 0.3s;
+}
+
+.profile-info img:hover {
+    transform: scale(1.1);
+}
+
+.profile-info p {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.profile-info strong {
+    color: #e94560;
+}
+
+/* Titres */
+h2 {
+    text-align: center;
+    color: #e94560;
+    font-size: 34px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: #eaeaea;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Formulaire */
+form {
+    max-width: 550px;
+    margin: 40px auto;
+    background-color: #1a1a2e;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+form:hover {
+    background-color: #16213e;
+}
+
+form label,
+form input,
+form textarea,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #eaeaea;
+    border-radius: 8px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 120px;
+    background-color: #0f3460;
+    color: #eaeaea;
+    border: 2px solid #e94560;
+    padding: 12px;
+}
+
+form input[type="file"] {
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    border: 2px solid #e94560;
+    padding: 12px;
+}
+
+form button {
+    background-color: #e94560;
+    color: white;
+    cursor: pointer;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #d43556;
+    transform: scale(1.05);
+}
+
+/* Message de succès ou d'erreur */
+p[style="color: green;"],
+p[style="color: red;"] {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Effet de hover sur les éléments */
+.profile-info p:hover,
+form label:hover {
+    color: #e94560;
+    cursor: pointer;
+}
+
+/* Réactivité pour mobile */
+@media (max-width: 768px) {
+    .profile-info {
+        padding: 15px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    form button {
+        font-size: 16px;
+    }
+}

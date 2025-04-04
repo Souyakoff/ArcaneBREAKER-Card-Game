@@ -1,0 +1,234 @@
+@font-face {
+    font-family: 'Arcane Nine';
+    src: url('assets/font/Arcane-Nine.otf') format('opentype'); /* Format OTF pour les anciens navigateurs */
+    font-weight: normal;
+    font-style: normal;
+}
+
+button:hover, a:hover, div:hover {
+    cursor: url('images/cursor/normal.png'), pointer;
+}
+
+
+body {
+    cursor: url('images/cursor/normal.png'), auto;
+    font-family: 'Arcane Nine', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9; /* Fond blanc avec une touche de gris-bleu */
+    color: #1a1a1a; /* Texte noir */
+    line-height: 1.6; /* Augmenter la lisibilité */
+}
+
+header {
+    background-color: #ffffff; /* Blanc pur pour le header */
+    backdrop-filter: blur(10px);
+    display: flex;
+    text-align: center;
+    height: 80px;
+    position: fixed; /* Fixe la barre de navigation en haut */
+    top: 0; /* Aligne la barre en haut de la page */
+    left: 0; /* Aligne la barre à gauche */
+    width: 100%; /* Fait en sorte que la barre occupe toute la largeur */
+    z-index: 1000; /* Assure que la navbar reste au-dessus du contenu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre pour le header */
+}
+
+header h1 {
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 32px;
+    color: #e94560; /* Rose vif pour les titres */
+    text-transform: uppercase; /* Mettre en majuscules pour un effet plus impactant */
+}
+
+header nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1a1a1a; /* Texte noir pour les liens */
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition pour le survol */
+}
+
+nav ul li a:hover {
+    background-color: #e94560; /* Rose vif pour le survol */
+    color: #ffffff; /* Texte blanc sur le rose */
+    border-radius: 5px; /* Effet arrondi lors du survol */
+}
+
+main {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form label, form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+}
+
+form input {
+    background-color: #ffffff; /* Blanc pour les champs de saisie */
+    color: #1a1a1a; /* Texte noir */
+    font-size: 16px;
+}
+
+form button {
+    background-color: #e94560; /* Rose vif pour les boutons */
+    color: #ffffff; /* Texte blanc */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ffffff; /* Fond blanc au survol */
+    color: #e94560; /* Texte rose vif */
+    border: 1px solid #e94560; /* Bord rose vif */
+}
+
+header h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.logo img {
+    width: 1550px; 
+    height: auto;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e94560;
+    margin-left: 750px;
+    cursor: pointer;
+}
+
+.profile-container img:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image */
+    border-radius: 50%; /* Maintient la forme circulaire */
+    border: 2px solid #f4f6f9; /* Blanc cassé */
+}
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e94560; 
+    width: 2px;
+    border-radius: 5px; 
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea; /* Gris clair */
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+#play {
+    background-color: #e94560;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#play:hover {
+    background-color: #ffffff;
+    color: #e94560;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+section{
+    background-color: #d1d1d1;
+    color: #1a1a1a;
+}
+
+section h2{
+    color: #e94560;
+}
+
+
+
+.game-rules {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #d1d1d1;
+    border-radius: 8px;
+}
+
+.game-rules h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #e94560;
+}
+
+.patch-note{
+    background-color: #d1d1d1;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.patch-note h2{
+    color: #e94560;
+    font-size: 28px;
+}
+
+.patch-note p{
+    font-size: 18px;
+    color: #eaeaea;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

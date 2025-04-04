@@ -1,0 +1,127 @@
+/* Style de base pour la carte */
+.card-item {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Perspective pour le retournement */
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Préserve l'effet 3D */
+    transition: transform 0.5s; /* Animation du retournement */
+    position: relative;
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Retourne la carte sur hover */
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden; /* Cache l'arrière lorsque la carte est retournée */
+}
+
+/* Style de la face avant de la carte */
+.card-front {
+    background-color: #e94560;
+    background-size: cover; /* L'image couvre toute la carte */
+    background-position: center; /* Centre l'image dans la carte */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-front img {
+    display: none;
+}
+
+.card-front:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Hauteur de l'ombre */
+    background: rgba(0, 0, 0, 0.4); /* Ombre noire semi-transparente */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Ombre diagonale */
+    transform: skewY(-10deg); /* Incline l'ombre en diagonale */
+    z-index: 1; /* Place l'ombre sous le texte */
+}
+
+/* Le nom de la carte en bas */
+.card-front h4 {
+    position: absolute;
+    bottom: -13px; /* Place le nom au bas de la carte */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2; /* Place le texte au-dessus de l'ombre */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre légère sur le texte */
+}
+
+
+/* Style de la face arrière de la carte */
+.card-back {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: rotateY(180deg); /* Tourne la face arrière */
+}
+
+.card-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Couche semi-transparente noire */
+    z-index: 1;
+}
+
+.card-back * {
+    position: relative;
+    z-index: 2; /* Place le contenu au-dessus de la couche assombrie */
+}
+
+.card-back p {
+    margin: 10px 0;
+}
+
+.class-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px; /* Ajustez pour l'espacement */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border-radius: 50%; /* Optionnel pour un look arrondi */
+}
+
+.class-icon img {
+    width: 32px; /* Taille de l'icône */
+    height: 32px;
+}

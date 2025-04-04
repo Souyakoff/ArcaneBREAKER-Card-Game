@@ -1,0 +1,271 @@
+@font-face {
+    font-family: 'Arcane Nine';
+    src:url('assets/font/Arcane-Nine.otf') format('opentype'); /* Format OTF pour les anciens navigateurs */
+    font-weight: normal;
+    font-style: normal;
+}
+
+html.is-changing .transition-fade {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+html.is-rendering .transition-fade {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+:hover, a:hover, div:hover {
+    cursor: url('images/cursor/normal.png'), pointer;
+}
+
+
+body {
+    cursor: url('images/cursor/normal.png'), auto;
+    font-family: 'Arcane Nine', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a2e;
+    color: #eaeaea;
+    line-height: 1.6; /* Augmenter la lisibilité */
+}
+
+
+header {
+    background-color: #111214;
+    backdrop-filter: blur(50px);
+    display: flex;
+    text-align: center;
+    height: 80px;
+    position: fixed; /* Fixe la barre de navigation en haut */
+    top: 0; /* Aligne la barre en haut de la page */
+    left: 0; /* Aligne la barre à gauche */
+    width: 100%; /* Fait en sorte que la barre occupe toute la largeur */
+    z-index: 1000; /* Assure que la navbar reste au-dessus du contenu */
+}
+
+header h1 {
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 32px;
+    color: #e94560;
+    text-transform: uppercase; /* Mettre en majuscules pour un effet plus impactant */
+}
+header nav {
+    display: flex;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #eaeaea;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition pour le survol */
+}
+
+nav ul li a:hover {
+    background-color: #e94560;
+    color: #16213e; /* Changer de couleur lors du survol */
+    border-radius: 5px; /* Effet arrondi lors du survol */
+}
+
+main {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+form label, form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form input, form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form input {
+    background-color: #16213e;
+    color: white;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #e94560;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #16213e;
+}
+
+/* Effet de transition pour le header */
+header h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Logo */
+.logo {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Un z-index élevé pour être sûr qu'il reste visible */
+}
+
+.logo img {
+    width: 1550px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto;
+}
+#username{
+    margin-top: 7px;
+    margin-left: 5px;
+    color: #e94560;
+}
+#level{
+    margin-top: 7px;
+    margin-left: 5px;
+    color: #f0be73;
+}
+ /* Profil à droite */
+ .profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e94560;
+    margin-left: 750px;
+    cursor: pointer;
+}
+
+.profile-container img:hover {
+    transform: scale(105px);
+    border-radius: 110%;
+    border: 2px solid #f0be73;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#play{
+    background-color: #f0be73;
+    border-radius: 5px; /* Effet arrondi lors du survol */
+    color: #000000;
+}
+#play:hover{
+    background-color: #000000;
+    color: #f0be73; 
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+::selection {
+    background-color: #e94560; /* Couleur de fond */
+    color: #16213e; /* Couleur du texte */
+}
+
+footer{
+    font-size: 25px;
+    text-align: center;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Style spécial pour la navbar sur un écran de 390px de large */
+@media (max-width: 390px) {
+    /* Réduire la taille du titre */
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* Adapter le menu de navigation */
+    nav ul {
+        display: none;  /* Cacher les liens de navigation sur les petits écrans */
+        flex-direction: column;
+        padding: 0;
+    }
+
+    /* Afficher le menu hamburger */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+    }
+
+    /* Cacher la barre de recherche et autres éléments supplémentaires */
+    .profile-container,
+    .menu-links {
+        display: none;
+    }
+
+    /* Lors du clic sur le menu hamburger, afficher le menu */
+    .menu-open nav ul {
+        display: flex;
+    }
+
+    /* Ajouter un fond sombre au menu pour un meilleur contraste */
+    nav {
+        background-color: #333;
+    }
+}
+
+/* Styles généraux pour les autres tailles d'écrans */
+@media (min-width: 391px) {
+    /* Restaurer l'affichage classique de la navbar */
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .profile-container,
+    .menu-links {
+        display: flex;
+    }
+}

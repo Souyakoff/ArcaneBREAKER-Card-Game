@@ -1,0 +1,318 @@
+.card-item {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Perspective pour le retournement */
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Préserve l'effet 3D */
+    transition: transform 0.5s; /* Animation du retournement */
+    position: relative;
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Retourne la carte sur hover */
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden; /* Cache l'arrière lorsque la carte est retournée */
+}
+
+/* Style de la face avant de la carte */
+.card-front {
+    background-color: #e94560;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-front img {
+    display: none;
+}
+
+.card-front:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+    transform: skewY(-10deg);
+    z-index: 1;
+}
+
+/* Style de la face arrière de la carte */
+.card-back {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: rotateY(180deg); /* Tourne la face arrière */
+}
+
+.card-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Couche semi-transparente noire */
+    z-index: 1;
+}
+
+.card-back * {
+    position: relative;
+    z-index: 2; /* Place le contenu au-dessus de la couche assombrie */
+}
+
+.card-back p {
+    margin: 10px 0;
+}
+.card-front h4 {
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Nouveau style pour afficher le prix */
+.card-price {
+    position: absolute;
+    bottom: 10px; /* Placer le prix légèrement au-dessus du bas */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffd700; /* Couleur dorée pour le prix */
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+/* Style spécifique pour la face arrière, pour que le prix soit aussi visible */
+.card-back .card-price {
+    position: absolute;
+    bottom: 20px; /* Placer le prix plus bas sur la face arrière */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffd700;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+.card-list{
+    margin-left: 150px;
+}
+
+#user_shards{
+    color: #ffd700;
+}
+#user_currency{
+    margin-left: 20px;
+}
+
+p {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 50px;
+    color: #e94560;
+}
+
+h2, h3, #countdown{
+    text-align: center;
+}
+
+#countdown{
+    color: #e94560;
+}
+
+/* Style général de la popup */
+/* Styles pour la popup */
+.popup {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.popup-content h3 {
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #0056b3;
+}
+
+.popup-card-display {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-item-popup {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Perspective pour le retournement */
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card-item-popup.disappearing {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.close-btn:hover {
+    color: red; /* Change la couleur au survol */
+}
+
+/* Titre de la popup */
+#popup-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Affichage de la carte dans la popup */
+.popup-card-display {
+    margin-bottom: 20px;
+}
+
+/* Affichage du prix */
+.popup-price-info {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Bouton d'achat */
+.buy-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #218838; /* Change la couleur du bouton au survol */
+}
+
+/* Message d'insuffisance de fonds */
+#insufficient-funds {
+    font-size: 1.2em;
+    color: red;
+    display: none; /* Caché par défaut */
+}
+
+.popup.success {
+    background-color: #28a745;
+    color: white;
+    animation: slideIn 0.5s ease-out;
+}
+
+.popup.error {
+    background-color: #dc3545;
+    color: white;
+    animation: shake 0.5s ease-out;
+}
+
+/* Animation de la confirmation de succès */
+@keyframes slideIn {
+    0% { transform: translate(-50%, -50%) scale(0); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Animation d'erreur (secouer) */
+@keyframes shake {
+    0% { transform: translate(-50%, -50%) translateX(0); }
+    25% { transform: translate(-50%, -50%) translateX(-10px); }
+    50% { transform: translate(-50%, -50%) translateX(10px); }
+    75% { transform: translate(-50%, -50%) translateX(-10px); }
+    100% { transform: translate(-50%, -50%) translateX(0); }
+}

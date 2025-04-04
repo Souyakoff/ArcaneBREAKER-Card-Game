@@ -1,0 +1,298 @@
+/* Style de base pour la carte */
+.card-item {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Perspective pour le retournement */
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Préserve l'effet 3D */
+    transition: transform 0.5s; /* Animation du retournement */
+    position: relative;
+}
+
+.card:hover {
+    transform: rotateY(180deg); /* Retourne la carte sur hover */
+    cursor: pointer;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden; /* Cache l'arrière lorsque la carte est retournée */
+}
+
+/* Style de la face avant de la carte */
+.card-front {
+    background-color: #e94560;
+    background-size: cover; /* L'image couvre toute la carte */
+    background-position: center; /* Centre l'image dans la carte */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-front img {
+    display: none;
+}
+
+.card-front:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Hauteur de l'ombre */
+    background: rgba(0, 0, 0, 0.4); /* Ombre noire semi-transparente */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); /* Ombre diagonale */
+    transform: skewY(-10deg); /* Incline l'ombre en diagonale */
+    z-index: 1; /* Place l'ombre sous le texte */
+}
+
+/* Le nom de la carte en bas */
+.card-front h4 {
+    position: absolute;
+    bottom: -13px; /* Place le nom au bas de la carte */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff; /* Couleur du texte */
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 2; /* Place le texte au-dessus de l'ombre */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Ombre légère sur le texte */
+}
+
+
+/* Style de la face arrière de la carte */
+.card-back {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #e7a86d;
+    box-shadow: 0 0 10px 2px rgba(231, 168, 109, 0.8); /* Effet de brillance */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: rotateY(180deg); /* Tourne la face arrière */
+}
+
+.card-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Couche semi-transparente noire */
+    z-index: 1;
+}
+
+.card-back * {
+    position: relative;
+    z-index: 2; /* Place le contenu au-dessus de la couche assombrie */
+}
+
+.card-back p {
+    margin: 10px 0;
+}
+
+
+
+/* Section de présentation et appel à l'action */
+.call-to-action {
+    background-color: #1a1a2e;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    color: #e94560;
+    font-size: 28px;
+}
+
+.call-to-action p {
+    font-size: 18px;
+    color: #eaeaea;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e94560;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #16213e;
+}
+
+/* Section - Explorez l'univers d'Arcane */
+/* Section Intro *
+
+
+/* Section - Les Règles du Jeu */
+/* Section des règles du jeu */
+.game-rules {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 8px;
+}
+
+.game-rules h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #e94560;
+}
+
+.rule-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.rule-container:last-child {
+    border-bottom: none;
+}
+
+.rule-text {
+    width: 55%;
+    color: #eaeaea;
+}
+
+.rule-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #eaeaea;
+}
+
+.rule-text p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.rule-image {
+    width: 40%;
+    text-align: right;
+}
+
+.rule-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Effet de transition pour le header */
+header h1 {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.intro {
+    position: relative; /* Pour pouvoir positionner des éléments à l'intérieur */
+    background-image: url('images/Arcaneanimatedbg.gif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* L'arrière-plan reste fixe quand on fait défiler */
+    height: 1150px; /* Vous pouvez ajuster la hauteur de la section */
+    color: #fff;
+    text-align: center;
+}
+
+.intro::before {
+    content: ''; /* Nécessaire pour créer un pseudo-élément */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ombre noire avec 50% d'opacité */
+    z-index: 1; /* Assurez-vous que l'overlay soit en dessous du texte */
+    background-image: url(images/breaker.png);
+    background-size: 100%;
+    background-position: 45%;
+    box-shadow: #000000;
+}
+
+.intro > * {
+    position: relative; /* Cela permet de superposer les éléments enfants par-dessus l'overlay */
+    z-index: 2; /* Positionner les éléments enfants par-dessus l'overlay */
+}
+
+#game-launch{
+    background-color: #f0be73;
+    border-radius: 5px; /* Effet arrondi lors du survol */
+    color: #000000;
+}
+
+#game-launch:hover{
+    background-color: #000000;
+    color: #f0be73; 
+}
+
+.patch-note{
+    background-color: #1a1a2e;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.patch-note h2{
+    color: #e94560;
+    font-size: 28px;
+}
+
+.patch-note p{
+    font-size: 18px;
+    color: #eaeaea;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Cacher la section intro sur les petits écrans (jusqu'à 390px de large) */
+@media (max-width: 390px) {
+    .intro {
+        display: none;
+    }
+}
+
+/* Afficher la section intro sur les écrans plus larges que 390px */
+@media (min-width: 391px) {
+    .intro {
+        display: block;
+    }
+}
+
+

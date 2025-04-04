@@ -1,0 +1,94 @@
+/* Container des decks */
+.decks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.deck-card {
+    background: #32324a;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.deck-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.deck-card h3 {
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+
+.deck-card p {
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+/* Popup Styles */
+.deck-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #2c2c44;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #fff;
+}
+
+.popup-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ffc107;
+}
+
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.popup-content ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #d1d1d1;
+}
+
+.choose-deck-button, .close-popup-button {
+    margin: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #00aaff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.choose-deck-button:hover, .close-popup-button:hover {
+    background: #0077cc;
+    transform: scale(1.05);
+}

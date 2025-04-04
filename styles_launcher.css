@@ -1,0 +1,68 @@
+/* Conteneur principal */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/Arcaneanimatedbg.gif'); /* Remplacez par le chemin de votre image */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+}
+
+body::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ombre noire avec 50% d'opacité */
+    box-shadow: #000000;
+}
+
+.launcher-container {
+    text-align: center;
+    color: #fff;
+}
+
+/* Style du logo */
+.launcher-logo {
+    width: 1500px; /* Ajustez la taille du logo */
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out; /* Animation d'apparition */
+}
+
+/* Style du bouton */
+.launcher-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: #e94560;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.launcher-button:hover {
+    background: #d03450;
+    transform: scale(1.1); /* Effet zoom */
+}
+
+.launcher-button:active {
+    transform: scale(0.95);
+}
+
+/* Animation pour le logo */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

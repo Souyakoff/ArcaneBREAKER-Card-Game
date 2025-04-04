@@ -1,0 +1,132 @@
+/* Masquer les barres de défilement */
+.levels-grid::-webkit-scrollbar {
+    display: none;
+}
+.levels-grid {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;    /* Firefox */
+
+}
+
+.level-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Titre du niveau */
+.level-card h4 {
+    font-size: 1.5rem;
+    color: #e94560;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Nom et bénéfices */
+.level-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.level-benefits {
+    font-size: 1rem;
+    color: #e94560;
+}
+
+/* Bouton retour */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #e94560;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #1a1a2e;
+    color: #e94560;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+ /* Styles pour le carousel */
+ .levels {
+    text-align: center;
+    position: relative;
+    padding: 2rem 0;
+}
+.levels-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 80%;
+    position: relative; /* Nécessaire pour positionner les boutons par-dessus */
+}
+.level-card {
+    background: #1a1a2e;
+    border: 2px solid #e94560;
+    flex: 0 0 300px;
+    border-radius: 8px;
+    padding: 1rem;;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.level-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+/* Boutons de navigation positionnés par-dessus les niveaux */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 123, 255, 0.8);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    z-index: 10; /* S'assurer que les boutons sont au-dessus du carousel */
+}
+.carousel-button:hover {
+    background: rgba(0, 123, 255, 1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.carousel-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+#prevButton {
+    left: 5px;
+}
+#nextButton {
+    right: 5px;
+}
+
+#buy_pass{
+    background-color: #fff;
+    color: #e94560;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#buy_pass:hover{
+    background-color: #f0be73;
+}
